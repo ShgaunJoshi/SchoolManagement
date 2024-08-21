@@ -1,0 +1,54 @@
+<h2 mat-dialog-title class="text-center">{{ isEditMode ? 'Edit Teacher' : 'Add Teacher' }}</h2>
+
+<div mat-dialog-content class="p-4">
+  <form [formGroup]="teacherForm" class="form-horizontal">
+    <!-- Name Field -->
+    <div class="mb-3 row">
+      <label for="name" class="col-sm-3 col-form-label">Name</label>
+      <div class="col-sm-9">
+        <input matInput id="name" formControlName="name" type="text" class="form-control" placeholder="Enter teacher's name" />
+        <div *ngIf="teacherForm.get('name')?.invalid && teacherForm.get('name')?.touched" class="text-danger mt-2">
+          Name is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Age Field -->
+    <div class="mb-3 row">
+      <label for="age" class="col-sm-3 col-form-label">Age</label>
+      <div class="col-sm-9">
+        <input matInput id="age" formControlName="age" type="number" class="form-control" placeholder="Enter teacher's age" />
+        <div *ngIf="teacherForm.get('age')?.invalid && teacherForm.get('age')?.touched" class="text-danger mt-2">
+          Age is required and must be a valid number.
+        </div>
+      </div>
+    </div>
+
+    <!-- Sex Field -->
+    <div class="mb-3 row">
+      <label class="col-sm-3 col-form-label">Sex</label>
+      <div class="col-sm-9">
+        <mat-radio-group id="sex" formControlName="sex" aria-label="Select sex">
+          <mat-radio-button value="M">Male</mat-radio-button>
+          <mat-radio-button value="F">Female</mat-radio-button>
+          <mat-radio-button value="O">Other</mat-radio-button>
+        </mat-radio-group>
+        <div *ngIf="teacherForm.get('sex')?.invalid && teacherForm.get('sex')?.touched" class="text-danger mt-2">
+          Sex is required.
+        </div>
+      </div>
+    </div>
+    <!-- Image Field -->
+    <div class="mb-3 row">
+      <label for="image" class="col-sm-3 col-form-label">Image</label>
+      <div class="col-sm-9">
+        <input matInput id="image" formControlName="image" type="text" class="form-control" placeholder="Enter image URL (optional)" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions class="d-flex justify-content-end">
+  <button mat-button class="btn btn-secondary me-2" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" class="btn btn-primary" (click)="onSave()">{{ isEditMode ? 'Update' : 'Save' }}</button>
+</div>

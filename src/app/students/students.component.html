@@ -1,0 +1,85 @@
+<div class="container mt-5">
+    <div class="mat-elevation-z8 position-relative">
+        <h2 class="text-primary text-center mb-4 primary-heading">Student Management</h2>
+  
+      <!-- Add Student Button -->
+       <div>
+          <button class="btn-custom mb-3 position-absolute top-0 end-0 m-3"(click)="openDialog()">
+        + Add Student
+      </button>
+        <form class="d-flex">
+          
+          <input matInput [formControl]="searchControl"  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn  btn-primary color:#fff" type="submit">Search</button>
+         
+        </form>
+       </div>
+  
+    <!-- Student Table -->
+      <div class="container mt-5">
+        <div class="table-responsive table-wrapper">
+          <div *ngIf="noRecordsFound && dataSource.filteredData.length === 0" class="text-center mt-3">
+            <p>No records found</p>
+          </div>
+          <div *ngIf="!noRecordsFound" class="table-responsive" >
+            <table mat-table [dataSource]="dataSource" matSort class="table table-striped table-bordered">
+              
+              <!-- ID Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+              </ng-container>
+      
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              </ng-container>
+      
+              <!-- Age Column -->
+              <ng-container matColumnDef="age">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+                <td mat-cell *matCellDef="let element">{{ element.age }}</td>
+              </ng-container>
+      
+              <!-- Class Column -->
+              <ng-container matColumnDef="class">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Class </th>
+                <td mat-cell *matCellDef="let element">{{ element.class }}</td>
+              </ng-container>
+      
+              <!-- Roll Number Column -->
+              <ng-container matColumnDef="rollNumber">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Roll Number </th>
+                <td mat-cell *matCellDef="let element">{{ element.rollNumber }}</td>
+              </ng-container>
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef class="text-center">Actions</th>
+              <td mat-cell *matCellDef="let student" class="text-center">
+                <!-- <button class="btn btn-primary btn-sm mr-2">Edit</button>
+               
+                <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Delete</button>
+              > -->
+              <mat-icon fontSet="material-icons" (click)="openEditDialog(student)">edit</mat-icon>
+
+                <mat-icon fontSet="material-icons"(click)="deleteStudent(student.id)">delete</mat-icon>
+                  
+            </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      
+    
+      
+      
+  
+      <!-- Paginator -->
+       <!-- / <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+     
+    </div>
+  </div>
+  

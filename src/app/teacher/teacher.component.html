@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <div class="mat-elevation-z8 position-relative">
+    <h2 class="text-primary text-center mb-4">Teacher List</h2>
+
+        <button class="btn-custom mb-3 position-absolute top-0 end-0 m-3"(click)="openTeacherDialog()">
+      + Add Teacher
+    </button>
+    
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.id }}</td>
+      </ng-container>
+      
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.name }}</td>
+      </ng-container>
+      
+      <!-- Age Column -->
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.age }}</td>
+      </ng-container>
+      
+      <!-- Sex Column -->
+      <ng-container matColumnDef="sex">
+        <th mat-header-cell *matHeaderCellDef> Sex </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.sex }}</td>
+      </ng-container>
+      
+      <!-- Image Column -->
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let teacher">
+          <img *ngIf="teacher.image" [src]="teacher.image" alt="Teacher Image" class="img-thumbnail" style="width: 100px;">
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="text-center">Actions</th>
+        <td mat-cell *matCellDef="let student" class="text-center">
+          <!-- <button class="btn btn-primary btn-sm mr-2">Edit</button>
+         
+          <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Delete</button>
+        > -->
+        <mat-icon fontSet="material-icons" (click)="openEditDialog(student)">edit</mat-icon>
+
+          <mat-icon fontSet="material-icons"(click)="deleteteacher(student.id)">delete</mat-icon>
+            
+      </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

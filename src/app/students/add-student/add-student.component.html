@@ -1,0 +1,39 @@
+<h2 mat-dialog-title class="text-center title YourApp">{{ isEditMode ? 'Edit Student' : 'Add Student' }}</h2>
+
+
+<div mat-dialog-content class="custom-dialog-content">
+  <form [formGroup]="studentForm">
+    <div class="mb-3 row">
+      <label for="name" class="col-sm-3 col-form-label">Name</label>
+      <div class="col-sm-9">
+        <input matInput id="name" formControlName="name" type="text" class="form-control" placeholder="Enter student's name">
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="age" class="col-sm-3 col-form-label">Age</label>
+      <div class="col-sm-9">
+        <input matInput id="age" formControlName="age" type="number" class="form-control" placeholder="Enter student's age">
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="class" class="col-sm-3 col-form-label">Class</label>
+      <div class="col-sm-9">
+        <input matInput id="class" formControlName="class" type="text" class="form-control" placeholder="Enter student's class"required>
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="rollNumber" class="col-sm-3 col-form-label">Roll Number</label>
+      <div class="col-sm-9">
+        <input matInput id="rollNumber" formControlName="rollNumber" type="number" class="form-control" placeholder="Enter student's roll number">
+      </div>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions class="d-flex justify-content-end">
+  <button mat-button class="btn btn-secondary me-2" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" class="btn btn-primary" (click)="onSave()">{{ isEditMode ? 'Update' : 'Save' }}</button>
+</div>

@@ -1,0 +1,139 @@
+.table-responsive {
+    margin-top: 20px;
+  }
+  
+  .table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .mat-header-cell {
+    background-color: #f8f9fa; /* Light grey background for header */
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .mat-cell {
+    vertical-align: middle;
+  }
+  
+  .mat-row {
+    transition: background-color 0.3s ease;
+  }
+  
+  .mat-row:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .btn-sm {
+    font-size: 0.875rem; /* Small button size */
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .mr-2 {
+    margin-right: 0.5rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  /* Ensure the button has white text on primary background */
+.mat-raised-button.mat-primary {
+    background-color: #1976d2; /* Primary color */
+    color: #ffffff; /* White text */
+  }
+  
+  /* Positioning the button in the top-right corner */
+  .position-relative {
+    position: relative;
+  }
+  
+  .position-absolute {
+    position: absolute;
+    color: #1976d2;
+  }
+  
+  .top-0 {
+    top: 0;
+  }
+  
+  .end-0 {
+    right: 0;
+  }
+  
+  .m-3 {
+    margin: 1rem; /* Adjust margin as needed */
+  }
+  
+  .primary-heading {
+    color: #1976d2; /* Primary color */
+    font-weight: bold;
+    text-align: center; /* Center align text */
+    margin-bottom: 1.5rem; /* Adjust spacing as needed */
+  }
+  .mat-raised-button.mat-primary {
+    background-color: #007bff; /* Bootstrap blue color */
+    color: #ffffff; /* White text */
+    border: none; /* Optional: remove border */
+  }
+  /* Custom button styling */
+.btn-custom {
+    background-color: #007bff; /* Blue background color */
+    color: #ffffff; /* White text color */
+    border: none; /* Remove border if necessary */
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+    border-radius: 0.25rem; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Button hover effect (optional) */
+  .btn-custom:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Ensure button is positioned correctly */
+  .position-relative {
+    position: relative;
+  }
+  
+  .position-absolute {
+    position: absolute;
+  }
+  
+  .top-0 {
+    top: 0;
+  }
+  
+  .end-0 {
+    right: 0;
+  }
+  
+  .m-3 {
+    margin: 1rem; /* Adjust margin as needed */
+  }
+
+  .custom-dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures the dialog is centered vertically */
+    margin: 0;
+  }
+  
+  .mat-dialog-container {
+    max-width: 400px; 
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+  }  
+
+  
+  
+  

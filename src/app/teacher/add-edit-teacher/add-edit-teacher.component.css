@@ -1,0 +1,22 @@
+/* Add this to your component's CSS file or a global stylesheet */
+
+.mat-form-field {
+  margin-bottom: 1rem;
+}
+
+.mat-dialog-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn-custom {
+  font-weight: bold;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+.title {
+  font-weight: bold; /* Makes the text bold */
+  color: #2061e3; /* Uses the primary color defined in your theme */
+}

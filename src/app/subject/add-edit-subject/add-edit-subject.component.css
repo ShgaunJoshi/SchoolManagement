@@ -1,0 +1,40 @@
+/* Add this CSS to customize the dialog's appearance */
+
+.mat-dialog-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.mat-dialog-content {
+  padding: 1.5rem;
+}
+
+.mat-dialog-actions {
+  padding: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Custom styling for form controls */
+.form-control {
+  border-radius: .25rem;
+}
+
+.text-danger {
+  font-size: .875rem;
+}
+
+/* Custom styling for chip list */
+.mat-chip-list {
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  padding: .5rem;
+  background-color: #f8f9fa;
+}
+
+.mat-chip {
+  margin: .2rem;
+}
+
+.mat-chip .mat-icon {
+  cursor: pointer;
+}

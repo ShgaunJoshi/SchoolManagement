@@ -1,0 +1,12 @@
+/* In your global styles.css or component-specific CSS file */
+
+.success-snackbar {
+    background-color: #4caf50; /* Green background for success */
+    color: white;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336; /* Red background for error */
+    color: white;
+  }
+  

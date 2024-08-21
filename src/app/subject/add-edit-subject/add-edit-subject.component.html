@@ -1,0 +1,47 @@
+<h2 mat-dialog-title class="text-center">{{ isEditMode ? 'Edit Teacher' : 'Add Teacher' }}</h2>
+
+<div class="mb-3 row">
+  <label for="name" class="col-sm-3 col-form-label">Name</label>
+  <div class="col-sm-9">
+    <input matInput placeholder="Name" formControlName="name" />
+    <div *ngIf="subjectForm.get('name')?.invalid && subjectForm.get('name')?.touched" class="text-danger">
+      Name is required.
+    </div>
+  </div>
+</div>
+
+<div class="mb-3 row">
+  <label for="class" class="col-sm-3 col-form-label">Class</label>
+  <div class="col-sm-9">
+    <input matInput placeholder="Class" formControlName="class" />
+    <div *ngIf="subjectForm.get('class')?.invalid && subjectForm.get('class')?.touched" class="text-danger">
+      Class is required.
+    </div>
+  </div>
+</div>
+
+<div class="mb-3 row">
+  <label for="languages" class="col-sm-3 col-form-label">Languages</label>
+  <div class="col-sm-9">
+    <mat-chip-list formControlName="languages" aria-label="Languages">
+      <mat-chip *ngFor="let language of subjectForm.get('languages')?.value" [removable]="true">
+        {{language}}
+        <mat-icon matChipRemove (click)="removeLanguage(language)">cancel</mat-icon>
+      </mat-chip>
+      <input
+        [matChipInputFor]="chipList"
+        (matChipInputTokenEnd)="addLanguage($event)"
+        placeholder="Add a language"
+      />
+    </mat-chip-list>
+    <div *ngIf="subjectForm.get('languages')?.invalid && subjectForm.get('languages')?.touched" class="text-danger">
+      At least one language is required.
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-end">
+  <button mat-raised-button color="primary" class="btn btn-primary" (click)="onSave()">{{ isEditMode ? 'Update' : 'Save' }}</button>
+
+  <button mat-button (click)="onCancel()">Cancel</button>
+</div>
